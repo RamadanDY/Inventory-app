@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default async function Home() {
   const results = await db.execute(sql`SELECT current_database()`);
+  console.log("RESULTS", results);
   return (
     <main className="flex flex-col h-screen gap-6 max-w-5xl mx-auto my-12">
       <div className="flex justify-between">
