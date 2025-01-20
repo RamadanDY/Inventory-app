@@ -39,7 +39,7 @@ export default async function Home() {
             htmlFor="description"
             className="block font-semibold text-sm mb-2"
           >
-            description
+            Description
           </Label>
           <Textarea name="description" id="description"></Textarea>
         </div>
