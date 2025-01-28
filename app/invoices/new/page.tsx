@@ -1,12 +1,18 @@
 import { sql } from "drizzle-orm";
+// we import sql from drizzle-orm to write raw sql queries
 import { db } from "@/db";
+// we import db from db/index.ts to interact with the database
+//also note that the @db is an alias for the path to the db folder
+// the @ means any folder with the name db in the root of the project
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-
+// step 2 is to make the function a default export and an async function so that wait for the results of the query to be returned before rendering the page
 export default async function Home() {
+  //step 3 our raw sql query
   const results = await db.execute(sql`SELECT current_database()`);
+  // we log it to the terminal to see the results
   console.log("RESULTS", results);
   return (
     <main className="flex flex-col h-screen gap-6 max-w-5xl mx-auto my-12">
